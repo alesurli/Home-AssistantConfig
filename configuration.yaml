@@ -58,6 +58,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 sensor: !include sensors.yaml
 device_tracker: !include device_tracker.yaml
+script: !include scripts.yaml
+shell_command: !include shell_commands.yaml
 
 zwave:
   usb_path: /dev/ttyACM0
