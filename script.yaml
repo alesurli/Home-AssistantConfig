@@ -1,0 +1,21 @@
+restart_hass:
+  alias: Restart Home Assistant
+  sequence:
+    - service: shell_command.restart_homeassistant
+
+reload_automations:
+  alias: Reload Automations
+  sequence:
+    - alias: Reload-Automations
+      service: automation.reload
+
+reboot_pi:
+  alias: Reboot System
+  sequence:
+    - service: homeassistant.turn_off
+    - service: shell_command.pi
+    
+get_latest_config:
+  alias: 'Update config'
+  sequence:
+    - service: shell_command.git_pull
