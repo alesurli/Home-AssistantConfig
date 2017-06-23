@@ -1,0 +1,63 @@
+configurator.plex_media_server:
+  hidden: true
+switch.fibaro_system_fgs213_switch_switch:
+  friendly_name: Boiler
+
+switch.swiid_swiidinter_switch:
+  friendly_name: Luce Divano
+  icon: mdi:lightbulb
+
+binary_sensor.sensative_strips_sensor:
+  friendly_name: Main Door
+  device_class: opening
+
+binary_sensor.fibaro_system_fgms001_motion_sensor_sensor:
+  friendly_name: Motion Sensor
+  device_class: motion
+
+sensor.fibaro_system_fgms001_motion_sensor_luminance:
+  friendly_name: Lux
+
+sensor.fibaro_system_fgms001_motion_sensor_temperature:
+  friendly_name: Temp
+sensor.widom_ume304_energy_driven_switch_power:
+  friendly_name: Main Power
+  icon: mdi:speedometer
+sensor.widom_ume304_energy_driven_switch_energy:
+  friendly_name: Total Main kWh
+  icon: mdi:gauge
+sensor.fibaro_system_fgs213_switch_power:
+  friendly_name: Boiler Power
+  icon: mdi:speedometer
+sensor.fibaro_system_fgs213_switch_energy:
+  friendly_name: Total Boiler kWh
+  icon: mdi:gauge
+sensor.widom_ume304_energy_driven_switch_current:
+  friendly_name: Main Current
+  icon: mdi:flash
+sensor.widom_ume304_energy_driven_switch_voltage:
+  friendly_name: Main Voltage
+  icon: mdi:flash
+
+sensor.owm_condition:
+  friendly_name: Condizioni
+sensor.owm_temperature:
+  friendly_name: Temperatura
+sensor.owm_humidity:
+  friendly_name: Umidità
+  icon: mdi:water-percent
+sensor.owm_pressure:
+  friendly_name: Pressione
+  icon: mdi:gauge
+sensor.owm_rain:
+  friendly_name: Pioggia
+  icon: mdi:weather-rainy
+sensor.owm_snow:
+  friendly_name: Neve
+  icon: mdi:weather-snowy
+sensor.owm_wind_speed:
+  friendly_name: Vento
+  icon: mdi:weather-windy
+sensor.owm_cloud_coverage:
+  friendly_name: Nuvolosità
+  icon: mdi:weather-cloudy

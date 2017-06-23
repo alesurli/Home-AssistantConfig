@@ -1,0 +1,206 @@
+- alias: "Boiler ON"
+  trigger:
+      platform: time
+      at: '19:01:00'
+  action:
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+      service: homeassistant.turn_on
+
+- alias: "Boiler OFF"
+  trigger:
+      platform: time
+      at: '22:30:00'
+  action:
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+      service: homeassistant.turn_off
+
+- alias: "Open Door"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.sensative_strips_sensor
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.telegram
+    data:
+      message: "Door is Opened"
+
+- alias: "Close Door"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.sensative_strips_sensor
+    from: 'on'
+    to: 'off'
+  action:
+    service: notify.telegram
+    data:
+      message: "Door is Closed"
+
+- alias: "Motion detection"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  action:
+
+- alias: "Telegram Main Control"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/start'
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Gestione Casa"
+      data:
+        keyboard:
+          - "/boiler, /luci, /sensori"
+
+- alias: "Telegram lights Control"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/luci'
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Gestione Luci"
+      data:
+        inline_keyboard:
+          - "Stato:/lightstatus, All ON:/lightson, All OFF:/lightsoff"
+
+- alias: "Telegram lights status"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/lightstatus'
+  action:
+    service: notify.telegram
+    data_template:
+      message: >
+          {%-if is_state("switch.swiid_swiidinter_switch","on") -%}
+            Luce Divano accesa
+          {%- else -%}
+            Luce Divano spenta
+          {%- endif %}
+
+- alias: "Telegram lights ON"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/lightson'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.swiid_swiidinter_switch
+    - service: notify.telegram
+      data_template:
+        message: >
+          {%-if is_state("switch.swiid_swiidinter_switch","on") -%}
+           Luce Divano è già accesa
+          {%- else -%}
+            Sto accendendo Luce Divano
+          {%- endif %}
+
+- alias: "Telegram lights OFF"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/lightsoff'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.swiid_swiidinter_switch
+    - service: notify.telegram
+      data_template:
+        message: >
+          {%-if is_state("switch.swiid_swiidinter_switch","off") -%}
+           Luce Divano è già spenta
+          {%- else -%}
+            Sto spegnendo Luce Divano
+          {%- endif %}
+
+- alias: "Telegram Boiler Control"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/boiler'
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Gestione Boiler"
+      data:
+        inline_keyboard:
+          - "Stato:/boilerstatus, ON:/boileron, OFF:/boileroff"
+
+- alias: "Telegram Boiler ON"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/boileron'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+    - service: notify.telegram
+      data_template:
+        message: >
+          {%-if is_state("switch.fibaro_system_fgs213_switch_switch","on") -%}
+            Il boiler è già acceso
+          {%- else -%}
+            Sto accendendo il boiler
+          {%- endif %}
+
+- alias: "Telegram Boiler OFF"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/boileroff'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+    - service: notify.telegram
+      data_template:
+        message: >
+          {%-if is_state("switch.fibaro_system_fgs213_switch_switch","off") -%}
+            Il boiler è già spento
+          {%- else -%}
+            Sto spegnendo il boiler
+          {%- endif %}
+
+- alias: "Telegram Boiler status"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/boilerstatus'
+  action:
+    service: notify.telegram
+    data_template:
+      message: >
+          {%-if is_state("switch.fibaro_system_fgs213_switch_switch","on") -%}
+            Il boiler è acceso
+          {%- else -%}
+            Il boiler è spento
+          {%- endif %}
+
+- alias: "Telegram Sensor Control"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/sensori'
+  action:
+    service: notify.telegram
+    data_template:
+      message: " Temperatura: {{ states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state }} C\n
+                Luce: {{ states.sensor.fibaro_system_fgms001_motion_sensor_luminance.state }} Lux\n
+                Potenza istantanea: {{ states.sensor.widom_ume304_energy_driven_switch_power.state }} W\n
+                Last motion detected: {{ (as_timestamp(states.automation.motion_detection.attributes.last_triggered)) | timestamp_custom('%H:%M:%S', True) }}\n
+                Last door event: {{ (as_timestamp(states.automation.close_door.attributes.last_triggered)) | timestamp_custom('%H:%M:%S', True) }}"

@@ -1,0 +1,47 @@
+default_view:
+  view: true
+  entities:
+  - device_tracker.homeassistant_ale
+  - sensor.fibaro_system_fgms001_motion_sensor_temperature
+  - sensor.fibaro_system_fgms001_motion_sensor_luminance
+  - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+  - binary_sensor.sensative_strips_sensor
+  - group.power
+  - group.weather
+  - group.switch
+  - group.light
+  - group.media
+  name: default_view
+light:
+  name: Light
+  entities:
+  - switch.swiid_swiidinter_switch
+switch:
+  name: Switch
+  entities:
+  - switch.fibaro_system_fgs213_switch_switch
+power:
+  name: Power
+  entities:
+  - sensor.widom_ume304_energy_driven_switch_power
+  - sensor.fibaro_system_fgs213_switch_power
+  - sensor.widom_ume304_energy_driven_switch_energy
+  - sensor.fibaro_system_fgs213_switch_energy
+  - sensor.widom_ume304_energy_driven_switch_current
+  - sensor.widom_ume304_energy_driven_switch_voltage
+weather:
+  name: Weather
+  entities:
+  - sensor.owm_condition
+  - sensor.owm_temperature
+  - sensor.owm_humidity
+  - sensor.owm_pressure
+  - sensor.owm_rain
+  - sensor.owm_snow
+  - sensor.owm_wind_speed
+  - sensor.owm_cloud_coverage
+media:
+  name: Media
+  entities:
+  - switch.tv
+  - switch.ps4
