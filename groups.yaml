@@ -23,7 +23,7 @@ switch:
 power:
   name: Power
   entities:
-  - sensor.widom_ume304_energy_driven_switch_power
+  - sensor.widom_ume304_energy_driven_switch_power_2
   - sensor.fibaro_system_fgs213_switch_power
   - sensor.widom_ume304_energy_driven_switch_energy
   - sensor.fibaro_system_fgs213_switch_energy

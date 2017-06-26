@@ -201,7 +201,7 @@
     data_template:
       message: " Temperatura: {{ states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state }} C\n
                 Luce: {{ states.sensor.fibaro_system_fgms001_motion_sensor_luminance.state }} Lux\n
-                Potenza istantanea: {{ states.sensor.widom_ume304_energy_driven_switch_power.state }} W\n
+                Potenza istantanea: {{ states.sensor.widom_ume304_energy_driven_switch_power_2.state }} W\n
                 Last motion detected: {{ (as_timestamp(states.automation.motion_detection.attributes.last_triggered)) | timestamp_custom('%H:%M:%S', True) }}\n
                 Last door event: {{ (as_timestamp(states.automation.close_door.attributes.last_triggered)) | timestamp_custom('%H:%M:%S', True) }}"
 
