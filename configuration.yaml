@@ -55,6 +55,17 @@ tts:
   platform: google
 
 influxdb:
+  include:
+    entities:
+       - automation.motion_detection
+       - automation.close_door
+       - automation.open_door
+       - sensor.fibaro_system_fgms001_motion_sensor_luminance
+       - sensor.fibaro_system_fgms001_motion_sensor_temperature
+       - sensor.fibaro_system_fgs213_switch_energy
+       - sensor.widom_ume304_energy_driven_switch_power
+       - sensor.widom_ume304_energy_driven_switch_voltage
+       - sensor.widom_ume304_energy_driven_switch_current
 
 group: !include groups.yaml
 automation: !include automations.yaml
