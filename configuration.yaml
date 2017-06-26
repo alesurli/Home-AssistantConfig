@@ -54,6 +54,8 @@ ios:
 tts:
   platform: google
 
+influxdb:
+
 group: !include groups.yaml
 automation: !include automations.yaml
 sensor: !include sensors.yaml
