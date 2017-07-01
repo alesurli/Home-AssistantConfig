@@ -1,15 +1,57 @@
-- alias: "Boiler ON"
+- alias: "Boiler ON weekdays"
   trigger:
-      platform: time
-      at: '19:01:00'
+    platform: time
+    at: '19:01:00'
+  condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
       entity_id: switch.fibaro_system_fgs213_switch_switch
       service: homeassistant.turn_on
 
-- alias: "Boiler OFF"
+- alias: "Boiler ON weekend"
+  trigger:
+    platform: time
+    at: '07:00:00'
+  condition:
+  - condition: time
+    weekday:
+      - sat
+      - sun
+  action:
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+      service: homeassistant.turn_on
+
+- alias: "Boiler OFF weekdays"
   trigger:
       platform: time
       at: '22:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+      entity_id: switch.fibaro_system_fgs213_switch_switch
+      service: homeassistant.turn_off
+
+- alias: "Boiler OFF weekend"
+  trigger:
+    platform: time
+    at: '22:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - sat
+      - sun
   action:
       entity_id: switch.fibaro_system_fgs213_switch_switch
       service: homeassistant.turn_off
