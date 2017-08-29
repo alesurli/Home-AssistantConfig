@@ -97,7 +97,14 @@
     entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
     from: 'off'
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.alar_mode
+      state: 'on'
   action:
+    service: notify.telegram
+    data:
+        message: "!! Motion Detected !!"
 
 - alias: "Telegram Main Control"
   trigger:
