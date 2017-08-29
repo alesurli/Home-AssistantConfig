@@ -11,6 +11,8 @@ default_view:
   - group.switch
   - group.light
   - group.media
+  - group.home_modes
+  
   name: default_view
 light:
   name: Light
