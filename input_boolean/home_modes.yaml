@@ -1,5 +1,5 @@
 holiday_mode:
-  name: Guest Mode
+  name: Holiday Mode
   icon: mdi:beach
   initial: off
 
