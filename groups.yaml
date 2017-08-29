@@ -45,3 +45,9 @@ media:
   entities:
   - switch.tv
   - switch.ps4
+
+home_modes:
+  control: hidden
+  entities:
+    - input_boolean.holiday_mode
+    - input_boolean.alert_mode
