@@ -7,12 +7,21 @@
     condition: and
     conditions:
       - condition: time
+<<<<<<< HEAD
         weekday:
           - mon
           - tue
           - wed
           - thu
           - fri
+=======
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+>>>>>>> 3b53e469c79859df8106ea623679c30bb41d4fd6
       - condition: state
         entity_id: input_boolean.holiday_mode
         state: 'off'
@@ -36,7 +45,11 @@
       - condition: state
         entity_id: input_boolean.holiday_mode
         state: 'off'
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 3b53e469c79859df8106ea623679c30bb41d4fd6
   action:
       entity_id: switch.fibaro_system_fgs213_switch_switch
       service: homeassistant.turn_on
