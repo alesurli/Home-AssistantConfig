@@ -99,7 +99,7 @@
     to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.alar_mode
+      entity_id: input_boolean.alert_mode
       state: 'on'
   action:
     service: notify.telegram
