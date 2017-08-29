@@ -2,14 +2,21 @@
   trigger:
     platform: time
     at: '19:01:00'
+
   condition:
-  - condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    condition: and
+    conditions:
+      - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      - condition: state
+        entity_id: input_boolean.holiday_mode
+        state: 'off'
+
   action:
       entity_id: switch.fibaro_system_fgs213_switch_switch
       service: homeassistant.turn_on
@@ -18,11 +25,18 @@
   trigger:
     platform: time
     at: '07:00:00'
+
   condition:
-  - condition: time
-    weekday:
+    condition: and
+    conditions:
+      - condition: time
+      weekday:
       - sat
       - sun
+      - condition: state
+        entity_id: input_boolean.holiday_mode
+        state: 'off'
+        
   action:
       entity_id: switch.fibaro_system_fgs213_switch_switch
       service: homeassistant.turn_on
