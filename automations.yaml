@@ -132,8 +132,7 @@
       message: "Gestione Modalità"
       data:
         inline_keyboard:
-          - "Stato:/modestatus, Eco Mode:/eco"
-          - "Holiday Mode:/holiday, Alert Mode:/alert"
+          - "Stato:/modestatus, Eco Mode:/eco, "Holiday Mode:/holiday, Alert Mode:/alert"
 
 - alias: "Telegram home mode status"
   trigger:
