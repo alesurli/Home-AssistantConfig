@@ -97,14 +97,13 @@
     entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
     from: 'off'
     to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.alert_mode
-      state: 'on'
   action:
     service: notify.telegram
     data:
-        message: "!! Motion Detected !!"
+        message: >
+            {%- if is_state("input_boolean.alert_mode","on") -%}
+              "!! Motion Detected !!"
+            {%- endif %}
 
 - alias: "Telegram Main Control"
   trigger:
@@ -118,7 +117,44 @@
       message: "Gestione Casa"
       data:
         keyboard:
-          - "/boiler, /luci, /sensori"
+          - "/sensori, /mode"
+          - "/boiler, /luci"
+
+- alias: "Telegram mode Control"
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/mode'
+  action:
+    service: notify.telegram
+    data_template:
+      message: "Gestione Modalità"
+      data:
+        inline_keyboard:
+          - "Stato:/modestatus, Eco Mode:/eco"
+          - "Holiday Mode:/holiday, Alert Mode:/alert"
+
+- alias: "Telegram home mode status"
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/modestatus'
+  action:
+    service: notify.telegram
+    data_template:
+      message: >
+          {%- if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
+            Eco Mode active.
+          {%- elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","on" -%}
+            Holiday Mode and Alarm active
+          {%- elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","off" -%}
+            Holiday Mode active %}
+          {%- elif is_state("input_boolean.holiday_mode","off") and is_state("input_boolean.alert_mode","on" -%}
+            Alarm active %}
+          {%- endif %}
+
 
 - alias: "Telegram lights Control"
   trigger:

@@ -51,5 +51,6 @@ media:
 home_modes:
   name: Home Modes
   entities:
+    - input_boolean.eco_mode
     - input_boolean.holiday_mode
     - input_boolean.alert_mode

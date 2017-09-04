@@ -7,3 +7,9 @@ alert_mode:
   name: Alert Mode
   icon: mdi:alert-octagram
   initial: off
+
+eco_mode:
+  name: Eco Mode
+  icon: mdi:leaf
+  initial: on
+  
