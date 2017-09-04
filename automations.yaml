@@ -145,13 +145,13 @@
     service: notify.telegram
     data_template:
       message: >
-          {%- if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
+          {% if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
             Eco Mode active.
-          {%- elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","on" -%}
+          {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","on" -%}
             Holiday Mode and Alarm active
-          {%- elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","off" -%}
+          {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","off" -%}
             Holiday Mode active %}
-          {%- elif is_state("input_boolean.holiday_mode","off") and is_state("input_boolean.alert_mode","on" -%}
+          {% elif is_state("input_boolean.holiday_mode","off") and is_state("input_boolean.alert_mode","on" -%}
             Alarm active %}
           {%- endif %}
 
