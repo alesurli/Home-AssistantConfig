@@ -71,8 +71,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 sensor: !include sensors.yaml
 device_tracker: !include device_tracker.yaml
-script: !include scripts.yaml
-shell_command: !include shell_commands.yaml
+script: !include_dir_merge_named scripts
+shell_command: !include_dir_merge_named shell_commands
 input_boolean: !include_dir_merge_named input_boolean
 
 zwave:
