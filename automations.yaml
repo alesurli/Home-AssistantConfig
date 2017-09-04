@@ -145,14 +145,14 @@
     service: notify.telegram
     data_template:
       message: >
-          {% if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
+          {%-if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
             Eco Mode active.
           {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","on" -%}
-            Holiday Mode and Alarm active
+            Holiday Mode and Alarm active.
           {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","off" -%}
-            Holiday Mode active %}
+            Holiday Mode active.
           {% elif is_state("input_boolean.holiday_mode","off") and is_state("input_boolean.alert_mode","on" -%}
-            Alarm active %}
+            Alarm active.
           {%- endif %}
 
 
@@ -198,7 +198,7 @@
     - service: notify.telegram
       data_template:
         message: >
-          {%-if is_state("switch.swiid_swiidinter_switch","on") -%}
+          {%- if is_state("switch.swiid_swiidinter_switch","on") -%}
            Luce Divano è già accesa
           {%- else -%}
             Sto accendendo Luce Divano
