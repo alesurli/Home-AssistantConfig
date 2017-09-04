@@ -146,10 +146,15 @@
     data_template:
       message: >
           {%-if is_state("input_boolean.eco_mode","on") -%}
-            Eco Mode active.
-          {%- elif is_state("input_boolean.alert_mode","on") -%}
-              sganps.
+            Eco Mode is active.
           {%- endif %}
+          {%- if is_state("input_boolean.alert_mode","on") -%}
+            Alert Mode is active.
+          {%- endif %}
+          {%- if is_state("input_boolean.holiday_mode","on") -%}
+            Holiday Mode is active.
+          {%- endif %}
+
 
 
 - alias: "Telegram lights Control"
