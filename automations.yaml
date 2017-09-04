@@ -123,7 +123,7 @@
 - alias: "Telegram mode Control"
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram_commandf
     event_data:
       command: '/mode'
   action:
@@ -147,12 +147,6 @@
       message: >
           {%-if is_state("input_boolean.holiday_mode","off") or is_state("input_boolean.alert_mode","off") -%}
             Eco Mode active.
-          {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","on" -%}
-            Holiday Mode and Alarm active.
-          {% elif is_state("input_boolean.holiday_mode","on") and is_state("input_boolean.alert_mode","off" -%}
-            Holiday Mode active.
-          {% elif is_state("input_boolean.holiday_mode","off") and is_state("input_boolean.alert_mode","on" -%}
-            Alarm active.
           {%- endif %}
 
 
