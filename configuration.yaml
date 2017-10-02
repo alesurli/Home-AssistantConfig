@@ -63,6 +63,7 @@ influxdb:
        - sensor.fibaro_system_fgms001_motion_sensor_luminance
        - sensor.fibaro_system_fgms001_motion_sensor_temperature
        - sensor.fibaro_system_fgs213_switch_energy
+       - sensor.widom_ume304_energy_driven_switch_energy
        - sensor.widom_ume304_energy_driven_switch_power_2
        - sensor.widom_ume304_energy_driven_switch_voltage
        - sensor.widom_ume304_energy_driven_switch_current
