@@ -26,9 +26,7 @@ http:
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
-  ssl_certificate: /etc/letsencrypt/live/surlinet.zapto.org/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/surlinet.zapto.org/privkey.pem
-  base_url: surlinet.zapto.org
+
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
