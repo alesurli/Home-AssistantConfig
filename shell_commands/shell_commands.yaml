@@ -4,3 +4,4 @@ pi: 'sudo reboot -now'
 git_pull: 'bash /opt/home_assistant/bash/git_pull.sh'
 restart_forked_daapd: 'sudo service forked-daapd restart'
 restart_homeassistant: 'sudo systemctl restart home-assistant@homeassistant'
+renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
