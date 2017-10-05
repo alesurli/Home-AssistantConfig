@@ -61,3 +61,8 @@ sensor.owm_wind_speed:
 sensor.owm_cloud_coverage:
   friendly_name: Nuvolosità
   icon: mdi:weather-cloudy
+
+device_tracker.iphonedicecilia:
+  friendly_name: Cecilia
+device_tracker.alephone:
+  friendly_name: Ale
