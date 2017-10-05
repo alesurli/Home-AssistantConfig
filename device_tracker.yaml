@@ -1,3 +1,4 @@
-#  - platform: owntracks
-#    max_gps_accuracy: 200
-#    waypoints: True
+   - platform: icloud
+     username: !secret icloud_username
+     password: !secret icloud_password
+     account_name: Ale
