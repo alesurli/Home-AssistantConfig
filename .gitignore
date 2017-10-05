@@ -24,3 +24,5 @@ nest.conf
 .uuid
 ipchange.yaml
 sensors/secret_sensors.yaml
+icloud/
+.spotify-token-cache
