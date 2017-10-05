@@ -54,7 +54,13 @@ sun:
 ios:
 # Text to speech
 tts:
-  platform: google
+  - platform: amazon_polly
+    aws_access_key_id: !secret aws_access_key_id
+    aws_secret_access_key: !secret aws_secret_access_key
+    voice: Carla
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 57600
 
 influxdb:
   include:
@@ -69,10 +75,12 @@ influxdb:
        - sensor.widom_ume304_energy_driven_switch_power_2
        - sensor.widom_ume304_energy_driven_switch_voltage
        - sensor.widom_ume304_energy_driven_switch_current
+       - device_tracker.ale
+       - device_tracker.cecilia
 
 group: !include groups.yaml
 automation: !include automations.yaml
-sensor: !include_dir_merge_named  sensors
+sensor: !include_dir_merge_list sensors
 device_tracker: !include device_tracker.yaml
 script: !include_dir_merge_named scripts
 shell_command: !include_dir_merge_named shell_commands
@@ -133,3 +141,14 @@ switch:
       tv:
         command_on: "echo on 0 | cec-client -s -d 1"
         command_off: "echo standby 0 | cec-client -s -d 1"
+
+media_player:
+  - platform: spotify
+    client_id: 84b44a51c72d463980cce94533830de4
+    client_secret: f01bfc78bc49485c853f0c662e253553
+#    aliases:
+#        abc123def456: 'Living Room'
+#        9183abas000: 'Bed Room'
+  - platform: vlc
+    name: speaker_hass
+    arguments: '--alsa-audio-device=hw:0,0'

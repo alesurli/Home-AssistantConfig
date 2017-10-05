@@ -1,7 +1,8 @@
 default_view:
   view: true
   entities:
-  - device_tracker.homeassistant_ale
+  - device_tracker.ale
+  - device_tracker.cecilia
   - sensor.fibaro_system_fgms001_motion_sensor_temperature
   - sensor.fibaro_system_fgms001_motion_sensor_luminance
   - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
@@ -47,6 +48,8 @@ media:
   entities:
   - switch.tv
   - switch.ps4
+  - media_player.spotify
+  - script.cecilia_ciao
 
 home_modes:
   name: Home Modes

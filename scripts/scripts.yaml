@@ -14,8 +14,22 @@ reboot_pi:
   sequence:
     - service: homeassistant.turn_off
     - service: shell_command.pi
-    
+
 get_latest_config:
   alias: 'Update config'
   sequence:
     - service: shell_command.git_pull
+
+cecilia_ciao:
+  alias: 'saluti'
+  sequence:
+    - service: tts.amazon_polly_say
+      entity_id: media_player.speaker_hass
+      data_template:
+        message: >
+                 {{ [
+                 "Ciao Ciccio!",
+                 "Sono qui",
+                 "Sei una cacca",
+                 "ho fame!"
+                 ] | random }}
