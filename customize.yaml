@@ -64,5 +64,7 @@ sensor.owm_cloud_coverage:
 
 device_tracker.iphonedicecilia:
   friendly_name: Cecilia
+  gravatar: ceci.fru@gmail.com
 device_tracker.alephone:
   friendly_name: Ale
+  gravatar: asurlinelli@soluzioninrete.it
