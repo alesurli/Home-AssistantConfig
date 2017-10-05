@@ -1,8 +1,8 @@
 default_view:
   view: true
   entities:
-  - device_tracker.ale
-  - device_tracker.cecilia
+  - device_tracker.alephone
+  - device_tracker.iphonedicecilia
   - sensor.fibaro_system_fgms001_motion_sensor_temperature
   - sensor.fibaro_system_fgms001_motion_sensor_luminance
   - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
