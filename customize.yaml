@@ -7,7 +7,7 @@ switch.swiid_swiidinter_switch:
   friendly_name: Luce Divano
   icon: mdi:lightbulb
 
-binary_sensor.sensative_strips_sensor:
+binary_sensor.neo_coolcam_doorwindow_detector_sensor:
   friendly_name: Main Door
   device_class: opening
 

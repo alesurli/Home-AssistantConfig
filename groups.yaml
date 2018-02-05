@@ -6,7 +6,7 @@ default_view:
   - sensor.fibaro_system_fgms001_motion_sensor_temperature
   - sensor.fibaro_system_fgms001_motion_sensor_luminance
   - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
-  - binary_sensor.sensative_strips_sensor
+  - binary_sensor.neo_coolcam_doorwindow_detector_sensor
   - group.power
   - group.climate
   - group.weather
