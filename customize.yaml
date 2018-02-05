@@ -39,14 +39,13 @@ sensor.widom_ume304_energy_driven_switch_voltage:
   friendly_name: Main Voltage
   icon: mdi:flash
 
-sensor.owm_condition:
+sensor.dark_sky_daily_summary:
   friendly_name: Condizioni
-sensor.owm_temperature:
+sensor.dark_sky_temperature:
   friendly_name: Temperatura
-sensor.owm_humidity:
+sensor.dark_sky_humidity:
   friendly_name: Umidità
-  icon: mdi:water-percent
-sensor.owm_pressure:
+sensor.dark_sky_pressure:
   friendly_name: Pressione
   icon: mdi:gauge
 sensor.owm_rain:

@@ -11,7 +11,26 @@
       - snow
       - clouds
     language: it
-
+  - platform: darksky
+    api_key: 845243740ca74976501387801e72f4e2
+    monitored_conditions:
+      - summary
+      - temperature
+      - humidity
+      - wind_speed
+      - pressure
+      - precip_type
+      - precip_intensity
+      - precip_probability
+      - cloud_cover
+      - minutely_summary
+      - hourly_summary
+      - daily_summary
+      - dew_point
+      - apparent_temperature
+      - temperature_max
+      - temperature_min
+      - uv_index
   - platform: command_line
     name: Travis Status
     command: /usr/bin/curl -X GET https://api.travis-ci.org/repos/alesurli/Home-AssistantConfig/cc.xml\?branch\=master | grep lastBuildStatus | cut -d'"' -f2

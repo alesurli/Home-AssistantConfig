@@ -8,11 +8,13 @@ default_view:
   - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
   - binary_sensor.sensative_strips_sensor
   - group.power
+  - group.climate
   - group.weather
   - group.switch
   - group.light
   - group.media
   - group.home_modes
+  - group.text
 
   name: default_view
 light:
@@ -32,13 +34,17 @@ power:
   - sensor.fibaro_system_fgs213_switch_energy
   - sensor.widom_ume304_energy_driven_switch_current
   - sensor.widom_ume304_energy_driven_switch_voltage
+climate:
+  name: Climate
+  entities:
+  - climate.termostato
 weather:
   name: Weather
   entities:
-  - sensor.owm_condition
-  - sensor.owm_temperature
-  - sensor.owm_humidity
-  - sensor.owm_pressure
+  - sensor.dark_sky_daily_summary
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_pressure
   - sensor.owm_rain
   - sensor.owm_snow
   - sensor.owm_wind_speed
@@ -57,3 +63,8 @@ home_modes:
     - input_boolean.eco_mode
     - input_boolean.holiday_mode
     - input_boolean.alert_mode
+
+text:
+  name: Input Text
+  entities:
+    - input_text.text1

@@ -17,6 +17,7 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  javascript_version: latest
 
 # Enables configuration UI
 config:
@@ -43,10 +44,10 @@ discovery:
 conversation:
 
 # Enables support for tracking state changes over time.
-#history:
+history:
 
 # View all events in a logbook
-#logbook:
+logbook:
 
 # Track the sun
 sun:
@@ -142,13 +143,27 @@ switch:
         command_on: "echo on 0 | cec-client -s -d 1"
         command_off: "echo standby 0 | cec-client -s -d 1"
 
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+climate:
+    - platform: netatmo
+
 media_player:
-  - platform: spotify
-    client_id: 84b44a51c72d463980cce94533830de4
-    client_secret: f01bfc78bc49485c853f0c662e253553
+  #  - platform: spotify
+  #  client_id: 84b44a51c72d463980cce94533830de4
+  #  client_secret: f01bfc78bc49485c853f0c662e253553
 #    aliases:
 #        abc123def456: 'Living Room'
 #        9183abas000: 'Bed Room'
   - platform: vlc
     name: speaker_hass
     arguments: '--alsa-audio-device=hw:0,0'
+
+input_text:
+  text1:
+    name: text_1
+    initial: Ciao
