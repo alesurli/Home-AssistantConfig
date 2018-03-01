@@ -47,16 +47,13 @@ sensor.dark_sky_humidity:
   friendly_name: Umidità
 sensor.dark_sky_pressure:
   friendly_name: Pressione
-  icon: mdi:gauge
-sensor.owm_rain:
-  friendly_name: Pioggia
-  icon: mdi:weather-rainy
-sensor.owm_snow:
-  friendly_name: Neve
-  icon: mdi:weather-snowy
-sensor.owm_wind_speed:
+sensor.dark_sky_precip_type:
+  friendly_name: Precipitazioni
+sensor.dark_sky_precip_intensity:
+  friendly_name: Intensità precipitazioni
+sensor.dark_sky_precip_probability:
+  friendly_name: Probabilità Precipitazioni
+sensor.dark_sky_wind_speed:
   friendly_name: Vento
-  icon: mdi:weather-windy
-sensor.owm_cloud_coverage:
+sensor.dark_sky_cloud_cover:
   friendly_name: Nuvolosità
-  icon: mdi:weather-cloudy
