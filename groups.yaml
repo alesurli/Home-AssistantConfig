@@ -41,7 +41,7 @@ climate:
 weather:
   name: Weather
   entities:
-  - sensor.dark_sky_daily_summary
+  - sensor.dark_sky_hourly_summary
   - sensor.dark_sky_temperature
   - sensor.dark_sky_humidity
   - sensor.dark_sky_pressure
@@ -49,7 +49,7 @@ weather:
   - sensor.dark_sky_precip_intensity
   - sensor.dark_sky_precip_probability
   - sensor.dark_sky_wind_speed
-  - sensor.owm_cloud_cover
+  - sensor.owm_cloud_coverage
 media:
   name: Media
   entities:

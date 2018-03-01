@@ -39,7 +39,7 @@ sensor.widom_ume304_energy_driven_switch_voltage:
   friendly_name: Main Voltage
   icon: mdi:flash
 
-sensor.dark_sky_daily_summary:
+sensor.dark_sky_hourly_summary:
   friendly_name: Condizioni
 sensor.dark_sky_temperature:
   friendly_name: Temperatura
@@ -55,5 +55,5 @@ sensor.dark_sky_precip_probability:
   friendly_name: Probabilità Precipitazioni
 sensor.dark_sky_wind_speed:
   friendly_name: Vento
-sensor.dark_sky_cloud_cover:
+sensor.dark_sky_cloud_coverage:
   friendly_name: Nuvolosità
