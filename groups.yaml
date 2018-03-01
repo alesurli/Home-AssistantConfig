@@ -49,7 +49,7 @@ weather:
   - sensor.dark_sky_precip_intensity
   - sensor.dark_sky_precip_probability
   - sensor.dark_sky_wind_speed
-  - sensor.owm_cloud_coverage
+  - sensor.dark_sky_cloud_coverage
 media:
   name: Media
   entities:
