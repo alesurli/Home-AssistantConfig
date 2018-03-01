@@ -49,6 +49,9 @@ history:
 # View all events in a logbook
 logbook:
 
+# Display Map
+map:
+
 # Track the sun
 sun:
 
@@ -153,12 +156,6 @@ climate:
     - platform: netatmo
 
 media_player:
-  #  - platform: spotify
-  #  client_id: 84b44a51c72d463980cce94533830de4
-  #  client_secret: f01bfc78bc49485c853f0c662e253553
-#    aliases:
-#        abc123def456: 'Living Room'
-#        9183abas000: 'Bed Room'
   - platform: vlc
     name: speaker_hass
     arguments: '--alsa-audio-device=hw:0,0'

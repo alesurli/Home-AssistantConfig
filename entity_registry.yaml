@@ -1,0 +1,141 @@
+sensor.alephone_battery_level:
+  platform: ios
+  unique_id: level_Ale
+sensor.alephone_battery_state:
+  platform: ios
+  unique_id: state_Ale
+sensor.iphone_di_cecilia_battery_level:
+  platform: ios
+  unique_id: level_cecilia
+sensor.iphone_di_cecilia_battery_state:
+  platform: ios
+  unique_id: state_cecilia
+sensor.iphone_di_cecilia_battery_level_2:
+  platform: ios
+  unique_id: level_iphone_di_cecilia
+sensor.iphone_di_cecilia_battery_state_2:
+  platform: ios
+  unique_id: state_iphone_di_cecilia
+switch.swiid_swiidinter_switch:
+  platform: zwave
+  unique_id: 3-72057594093060096
+binary_sensor.fibaro_system_fgms001_motion_sensor_sensor:
+  platform: zwave
+  unique_id: 4-72057594110017536
+sensor.fibaro_system_fgms001_motion_sensor_temperature:
+  platform: zwave
+  unique_id: 4-72057594110033938
+sensor.fibaro_system_fgms001_motion_sensor_luminance:
+  platform: zwave
+  unique_id: 4-72057594110033970
+sensor.fibaro_system_fgms001_motion_sensor_general:
+  platform: zwave
+  unique_id: 4-72057594111787009
+switch.widom_ume304_energy_driven_switch_switch:
+  platform: zwave
+  unique_id: 5-72057594126614528
+sensor.widom_ume304_energy_driven_switch_power:
+  platform: zwave
+  unique_id: 5-72057594126811202
+sensor.widom_ume304_energy_driven_switch_energy:
+  platform: zwave
+  unique_id: 5-72057594126827522
+sensor.widom_ume304_energy_driven_switch_previous_reading:
+  platform: zwave
+  unique_id: 5-72057594126827538
+sensor.widom_ume304_energy_driven_switch_interval:
+  platform: zwave
+  unique_id: 5-72057594126827555
+sensor.widom_ume304_energy_driven_switch_power_2:
+  platform: zwave
+  unique_id: 5-72057594126827650
+sensor.widom_ume304_energy_driven_switch_previous_reading_2:
+  platform: zwave
+  unique_id: 5-72057594126827666
+sensor.widom_ume304_energy_driven_switch_interval_2:
+  platform: zwave
+  unique_id: 5-72057594126827683
+sensor.widom_ume304_energy_driven_switch_voltage:
+  platform: zwave
+  unique_id: 5-72057594126827778
+sensor.widom_ume304_energy_driven_switch_previous_reading_3:
+  platform: zwave
+  unique_id: 5-72057594126827794
+sensor.widom_ume304_energy_driven_switch_interval_3:
+  platform: zwave
+  unique_id: 5-72057594126827811
+sensor.widom_ume304_energy_driven_switch_current:
+  platform: zwave
+  unique_id: 5-72057594126827842
+sensor.widom_ume304_energy_driven_switch_previous_reading_4:
+  platform: zwave
+  unique_id: 5-72057594126827858
+sensor.widom_ume304_energy_driven_switch_interval_4:
+  platform: zwave
+  unique_id: 5-72057594126827875
+sensor.widom_ume304_energy_driven_switch_power_factor:
+  platform: zwave
+  unique_id: 5-72057594126827906
+sensor.widom_ume304_energy_driven_switch_previous_reading_5:
+  platform: zwave
+  unique_id: 5-72057594126827922
+sensor.widom_ume304_energy_driven_switch_interval_5:
+  platform: zwave
+  unique_id: 5-72057594126827939
+sensor.widom_ume304_energy_driven_switch_exporting:
+  platform: zwave
+  unique_id: 5-72057594126828032
+switch.fibaro_system_fgs213_switch_switch:
+  platform: zwave
+  unique_id: 8-72057594176946176
+switch.fibaro_system_fgs213_switch_switch_2:
+  platform: zwave
+  unique_id: 8-144115188214874112
+switch.fibaro_system_fgs213_switch_switch_3:
+  platform: zwave
+  unique_id: 8-216172782252802048
+switch.fibaro_system_fgs213_switch_switch_4:
+  platform: zwave
+  unique_id: 8-288230376290729984
+sensor.fibaro_system_fgs213_switch_energy:
+  platform: zwave
+  unique_id: 8-72057594177159170
+sensor.fibaro_system_fgs213_switch_unknown:
+  platform: zwave
+  unique_id: 8-144115188215087106
+sensor.fibaro_system_fgs213_switch_power:
+  platform: zwave
+  unique_id: 8-72057594177159298
+sensor.fibaro_system_fgs213_switch_exporting:
+  platform: zwave
+  unique_id: 8-72057594177159680
+sensor.fibaro_system_fgs213_switch_alarm_type:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.fibaro_system_fgs213_switch_alarm_level:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.fibaro_system_fgs213_switch_sourcenodeid:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.fibaro_system_fgs213_switch_heat:
+  platform: zwave
+  unique_id: 8-72057594178191473
+sensor.fibaro_system_fgs213_switch_power_management:
+  platform: zwave
+  unique_id: 8-72057594178191537
+binary_sensor.neo_coolcam_doorwindow_detector_sensor:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.neo_coolcam_doorwindow_detector_alarm_type:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.neo_coolcam_doorwindow_detector_alarm_level:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.neo_coolcam_doorwindow_detector_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.neo_coolcam_doorwindow_detector_access_control:
+  platform: zwave
+  unique_id: 9-72057594194968721
